@@ -13,7 +13,7 @@ func start(bot *tg.BotAPI, update *tg.Update) {
 	msgText := "Hello!\n" +
 		"I am GetMyProfile bot. I return information that you share with all bots, " +
 		"when writing to them.\n\n" +
-		"Tap /getMe to get info."
+		"Tap /getme to get info."
 
 	msg := tg.NewMessage(update.Message.Chat.ID, msgText)
 	_, _ = bot.Send(msg)
@@ -56,7 +56,7 @@ func Handler(w http.ResponseWriter, request *http.Request) {
 	switch update.Message.Text {
 	case "/start":
 		start(bot, &update)
-	case "/getMe":
+	case "/getme":
 		getMe(bot, &update)
 	}
 }
